@@ -21,7 +21,9 @@ def fonction(string,separator):
         tableau.append(piece)
     for item in tableau:
         print(item)
-fonction(sys.argv[1],sys.argv[2])
+if __name__ == "__main__":
+
+    fonction(sys.argv[1],sys.argv[2])
 
 
 

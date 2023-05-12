@@ -13,8 +13,8 @@ def split(string_to_separate,separator):
         if i==n:
             tableau.append(piece)
     return tableau# else:
-    separator=" "
 if __name__ == '__main__' :
+    separator=" "
     parser = argparse.ArgumentParser()
     parser.add_argument('message')
     args = parser.parse_args()
