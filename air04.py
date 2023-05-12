@@ -1,6 +1,6 @@
 #un seul à la fois
 import sys
-def fonction_a_nommer(string):
+def nonauxadjacants(string):
 #     tableau=[]
 #     for i in string:
 #         if i!=" ":
@@ -21,6 +21,6 @@ def fonction_a_nommer(string):
         if string[i]!=string[i-1]:
             res+=string[i]
     print(res)
-
-string=sys.argv[1]
-fonction_a_nommer(string)
+if __name__=="__main__":
+    string=sys.argv[1]
+    fonction_a_nommer(string)

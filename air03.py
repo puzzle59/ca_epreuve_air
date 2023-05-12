@@ -1,12 +1,20 @@
 #air03 chercher l'intrus
 import sys
-tamere=[]
-for i in sys.argv :
-    tamere.append(i)
-for i in tamere:
-    if tamere.count(i)%2==0:
-        tamere.remove(i)
-        tamere.remove(i)
+def intru(tableau):
 
-for i in tamere:
-    print(i)
+    print(tableau)
+    for item in tableau:
+        print(f"{item}:{tableau.count(item)}")
+        print("1" in tableau)
+        if tableau.count(str(item))%2==0:
+            tableau.remove(str(item))
+            tableau.remove(str(item))
+        
+    for i in tableau:
+        print(i)
+if __name__=="__main__":
+    tableau=sys.argv[1:]
+    for item in tableau:
+        item=str(item)
+    intru(tableau)
+############ je ne comprends pas il me dit que 1 n'est pas dans le tableau 
