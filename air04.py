@@ -23,4 +23,4 @@ def nonauxadjacants(string):
     print(res)
 if __name__=="__main__":
     string=sys.argv[1]
-    fonction_a_nommer(string)
+    nonauxadjacants(string)
