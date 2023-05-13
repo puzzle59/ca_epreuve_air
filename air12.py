@@ -30,8 +30,10 @@ def quick_sort(array):
     pivot=random.choice(array)
     c=partition(array,pivot)
     return quick_sort(c[0])+quick_sort(c[1])
+if __name__=="__main__":
 
-array=[]
-for i in sys.argv[1:]:
-    array.append(int(i))
-print(quick_sort(array))
+    array=[]
+    for i in sys.argv[1:]:
+        array.append(int(i))
+    for item  in quick_sort(array):
+        print(item,end=" ")

@@ -28,6 +28,10 @@ from air05 import operation
 from air06 import controlepasssanitaire
 from air07 import insert_array
 from air08 import sorted_fusion
+from air09 import rotation_gauche_tab
+from air10 import ouvrir
+from air11 import pyramide
+from air12 import quick_sort
 
 ##########################################################################""
 import io
@@ -141,6 +145,39 @@ class air08(unittest.TestCase):
     def testair081(self):
         self.assertEqual(sorted_fusion([1,2,4,8,9],[3,5,10]),[1,2,3,4,5,8,9,10])
         print("air 08 (1/1) successful (14/)")
+########################################################################
+class air09(unittest.TestCase):
+    def testair091(self):
+        self.assertEqual(rotation_gauche_tab([0,4,5,6,8]),[4,5,6,8,0])
+        print("air 09 (1/1) (15/) successfull")
+#######################################################################
+class air10(unittest.TestCase):
+    def testair101(self):
+        captured_output= io.StringIO()
+        sys.stdout= captured_output
+        ouvrir("jedanselemia.txt")
+        sys.stdout = sys.__stdout__
+        output = captured_output.getvalue().strip()
+        self.assertEqual(output,"Voilà le fichier à afficher. Coucou")
+        print("air10 (1/1) successful (16/)")
+#########################################################################
+class air11(unittest.TestCase):
+    def testair111(self):
+        captured_output= io.StringIO()
+        sys.stdout= captured_output
+        pyramide(7,4)
+        sys.stdout = sys.__stdout__
+        output = captured_output.getvalue().strip()
+        self.assertEqual(output,"7   \n  777  \n 77777 \n7777777")
+        print("air11 (1/1) successful (17/)")
+###########################################################################
+class air12(unittest.TestCase):
+    def testair121(self):
+        
+        self.assertEqual(quick_sort([4,2,8,1,17,34,32,20,21,50]),[1,2,4,8,17,20,21,32,34,50])
+        print("air12 (1/1) successful (18/18)")
+############################################################################
+
 
 if __name__=="__main__":
     unittest.main()
