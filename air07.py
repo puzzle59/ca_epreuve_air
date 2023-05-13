@@ -15,9 +15,9 @@ def position_elt_array(array,element):
 def insert_array(array,new_element):
     if new_element in array:
         return array
-    print(f"array:{array}")
+
     i=position_elt_array(array,new_element)
-    print(f"position à insérer{i}")
+    # print(f"position à insérer{i}")
     array=array[:i]+[new_element]+array[i:]
     return array
 
@@ -37,4 +37,5 @@ if __name__=="__main__":
 
 
     new_element=int(sys.argv[-1])   
-    print(insert_array(array,new_element))
+    for item in insert_array(array,new_element):
+        print(item,end=" ")

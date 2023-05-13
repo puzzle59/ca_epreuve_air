@@ -26,7 +26,8 @@ from air03 import intru
 from air04 import nonauxadjacants
 from air05 import operation
 from air06 import controlepasssanitaire
-# air03,air04,air05,air06,air07,air08,air09,air10,air11,air12
+from air07 import insert_array
+from air08 import sorted_fusion
 
 ##########################################################################""
 import io
@@ -74,7 +75,7 @@ class air02(unittest.TestCase):
     def testegal(self):
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        concat("coucou ça va "," ")
+        concat("coucou ça va"," ")
         sys.stdout = sys.__stdout__ # Reset stdout to its default value
         output = captured_output.getvalue().strip()
         self.assertEqual(output,"coucouçava")
@@ -129,11 +130,17 @@ class air05(unittest.TestCase):
 class air06(unittest.TestCase):
     def testair061(self):
         self.assertEqual(controlepasssanitaire(["Michel","Albert","josé","mowgli","Timéon"],"t"),["Michel","josé","mowgli"])
-        print(" air06 (1/1) (12/)")
+        print(" air06 (1/1) successful(12/)")
 ###########################################################################
-# class air07(unittest.TestCase):
-#     def testair071(self):
-
+class air07(unittest.TestCase):
+    def testair071(self):
+        self.assertEqual(insert_array([1,2,3,4,5,8,9],7),[1,2,3,4,5,7,8,9])
+        print("air 07 (1/1) successful(13/)")
+########################################################################"#"
+class air08(unittest.TestCase):
+    def testair081(self):
+        self.assertEqual(sorted_fusion([1,2,4,8,9],[3,5,10]),[1,2,3,4,5,8,9,10])
+        print("air 08 (1/1) successful (14/)")
 
 if __name__=="__main__":
     unittest.main()
