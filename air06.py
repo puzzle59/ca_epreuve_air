@@ -1,8 +1,15 @@
 #controle pass sanitaire
 import sys
-tableau=[]
-for i in sys.argv[1:-1]:
-    tableau.append(i.lower())
-    if i.count(sys.argv[-1].lower())<1:
+def controlepasssanitaire(tableau,string):
+    for i in tableau:
+        if i.lower().count(string.lower())!=0:
             tableau.remove(i)
-print(tableau)
+    return tableau
+if __name__=="__main__":
+    string=sys.argv[-1]
+    tableau=[]
+    for i in sys.argv[1:-1]:
+        tableau.append(i)
+    for item in controlepasssanitaire(tableau,string):
+        print(item,end=" ")
+    

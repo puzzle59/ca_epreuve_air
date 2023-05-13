@@ -25,6 +25,7 @@ from air02 import concat
 from air03 import intru
 from air04 import nonauxadjacants
 from air05 import operation
+from air06 import controlepasssanitaire
 # air03,air04,air05,air06,air07,air08,air09,air10,air11,air12
 
 ##########################################################################""
@@ -124,5 +125,15 @@ class air05(unittest.TestCase):
         output = captured_output.getvalue().strip()
         self.assertEqual(output,"division par zero impossible")
         print("air05 (2/2) successful (11/)")
+###########################################################################
+class air06(unittest.TestCase):
+    def testair061(self):
+        self.assertEqual(controlepasssanitaire(["Michel","Albert","josé","mowgli","Timéon"],"t"),["Michel","josé","mowgli"])
+        print(" air06 (1/1) (12/)")
+###########################################################################
+# class air07(unittest.TestCase):
+#     def testair071(self):
+
+
 if __name__=="__main__":
     unittest.main()
