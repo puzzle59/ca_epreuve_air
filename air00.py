@@ -1,4 +1,4 @@
-import sys,argparse
+import sys
 def split(string_to_separate,separator):
     piece=""
     tableau=[]
@@ -14,18 +14,14 @@ def split(string_to_separate,separator):
             tableau.append(piece)
     return tableau# else:
 if __name__ == '__main__' :
-    separator=" "
-    parser = argparse.ArgumentParser()
-    parser.add_argument('message')
-    args = parser.parse_args()
+    
+    string_to_separate= sys.argv[1]
+    string_to_separate=sys.argv[1]
+    if len(sys.argv)>2:
+        separator=sys.argv[2]
+    else:
+        separator=" "
 
-    # Access the arguments
-    string_to_separate = args.message
-    # string_to_separate=sys.argv[1]
-    # if len(sys.argv)>2:
-    #     separator=sys.argv[2]
-    # else:
-    #     separator=" "
     for item in split(string_to_separate," "):
         print(item)
 # pb quand 2 séparateurs à la suite , affiche un chiffre..
